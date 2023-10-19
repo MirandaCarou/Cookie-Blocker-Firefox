@@ -1,5 +1,3 @@
-
-
 //------------------ FUNCIONES QUE SE UTILIZAN (AJENAS A LA EXTENSION)------------------------------------------------------
 async function waitForElementsById(elementIds) {
     return new Promise((resolve) => {
@@ -51,10 +49,12 @@ function getHandlerData(){
 async function runAplication(){
   waitForElementsById(handlersRootNames)
   .then(async () => {
-    chrome.storage.sync.get("accepted", async function (data) {
+    browser.storage.sync.get("accepted").then(async function(data) {
       preferences = data.accepted;
       getHandlerData();
       await configurateCookies(handler,preferences);
+    }).catch(function(error) {
+      console.error("Error al obtener datos de almacenamiento:", error);
     });
   })
   .catch((error) => {
@@ -71,11 +71,7 @@ var handlersArray = handlerSetUp.getAllHandlers();
 var handlersRootNames = handlerSetUp.getAllRootNames();
 var preferences = "";
 
-
-
-  console.log("dom content loaded");
-  runAplication();
-
+runAplication();
 
 
    
