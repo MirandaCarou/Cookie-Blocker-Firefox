@@ -1,42 +1,44 @@
 {
   "name": "Cookie cracker",
   "version": "1.0",
-  "manifest_version": 3,
+  "manifest_version": 2,
   "description": "Bloquea cookies no esenciales",
   "icons": {
-    "128": "/icons/cookie.png"
+    "128": "icons/cookie.png"
   },
   "permissions": [
     "cookies",
-    "scripting",
     "activeTab",
     "storage",
     "tabs"
-  ],
-  "host_permissions": [
-    "*://*/*"
   ],
   "background": {
     "scripts": ["background.js"]
   },
   "content_scripts": [
     {
-      "matches": ["https://*/*","http://*/*"],
-      "js": ["./Handlers/handler.js","./Handlers/didomi.js","./Handlers/oneTrust.js","setUp.js","content-script.js" ]
+      "matches": ["<all_urls>"],
+      "js": [
+        "./Handlers/handler.js",
+        "./Handlers/didomi.js",
+        "./Handlers/oneTrust.js",
+        "setUp.js",
+        "content-script.js"
+      ]
     }
   ],
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "{daf44bf7-a45e-4450-979c-91cf07434c3d}"
-    }
-  },
-  "action": {
+  "browser_action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "/icons/cookie.png",
-      "32": "/icons/cookie.png",
-      "48": "/icons/cookie.png",
-      "128": "/icons/cookie.png"
+      "16": "icons/cookie.png",
+      "32": "icons/cookie.png",
+      "48": "icons/cookie.png",
+      "128": "icons/cookie.png"
+    }
+  },
+  "applications": {
+    "gecko": {
+      "id": "{daf44bf7-a45e-4450-979c-91cf07434c3d}"
     }
   }
 }

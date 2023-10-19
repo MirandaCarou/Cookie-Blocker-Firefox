@@ -30,12 +30,6 @@ async function configurateCookies(handler, preferences) {
 
 }
 
-async function getCookiePreferences(){
-    chrome.storage.sync.get("accepted", async function (data) {
-        console.log("The preference value is "+ data.accepted);
-        preferences = data.accepted;
-    });
-}
 
 
 function getHandlerData(){
@@ -49,12 +43,10 @@ function getHandlerData(){
 async function runAplication(){
   waitForElementsById(handlersRootNames)
   .then(async () => {
-    browser.storage.sync.get("accepted").then(async function(data) {
+    browser.storage.sync.get("accepted", async function(data) {
       preferences = data.accepted;
       getHandlerData();
       await configurateCookies(handler,preferences);
-    }).catch(function(error) {
-      console.error("Error al obtener datos de almacenamiento:", error);
     });
   })
   .catch((error) => {
