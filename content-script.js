@@ -43,10 +43,13 @@ function getHandlerData(){
 async function runAplication(){
   waitForElementsById(handlersRootNames)
   .then(async () => {
-    browser.storage.sync.get("accepted", async function(data) {
+    browser.storage.local.get("accepted").then(async (data) => {
       preferences = data.accepted;
       getHandlerData();
       await configurateCookies(handler,preferences);
+    })
+    .catch(error => {
+      console.error("Error al guardar la opción rechazada:", error);
     });
   })
   .catch((error) => {
