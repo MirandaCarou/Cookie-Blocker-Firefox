@@ -3,26 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Extension de bloqueo de cookies</title>
-  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" type="text/css" href="css/popup.css">
   <script src="popup.js"></script>
 </head>
 <body>
-  <h1>Extension de bloqueo de cookies</h1>
-  <p>
-    Se ha detectado una página con cookies no esenciales.
-  </p>
-  <hr>
-  <p>
-    ¿Qué deseas hacer?:
-    <br>
-    <label>
-      <input type="radio" name="option" value="true" id="accept" checked> Aceptar Todas
-    </label>
-    <br>
-    <label>
-      <input type="radio" name="option" value="false" id="reject"> Rechazar Todas
-    </label>
-  </p>
-  <hr>
+  <div>
+    <h1>Extension de bloqueo de cookies</h1>
+    <span> Se ha detectado una página con cookies no esenciales.</span>
+    <span> ¿Qué deseas hacer?: </span>
+    <div>
+      <label>
+        <input type="radio" name="option" value="true" id="accept" checked> Aceptar Todas
+      </label>
+      <label>
+        <input type="radio" name="option" value="false" id="reject"> Rechazar Todas
+      </label>
+    </div>
+  </div>
 </body>
 </html>

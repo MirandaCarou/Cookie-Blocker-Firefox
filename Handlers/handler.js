@@ -53,7 +53,7 @@ class Handler {
         if(document.getElementById(id)){
           document.getElementById(id).click();
         }else{
-          this.waitForElementById(id)
+          this.waitForElementsById(id)
           .then(() => {
             document.getElementById(id).click();
           })
@@ -64,10 +64,9 @@ class Handler {
       }
     clickElementWithClassName(className) {
         if(document.getElementsByClassName(className)[0] !== undefined && document.getElementsByClassName(className)[0] != null){
-          console.log(document.getElementsByClassName(className)[0].click());
           document.getElementsByClassName(className)[0].click();
         }else{
-          this.waitForElementByClass(className)
+          this.waitForElementsByClass(className)
           .then(() => {
             document.getElementsByClassName(className)[0].click();
           })

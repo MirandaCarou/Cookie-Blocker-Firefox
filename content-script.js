@@ -1,19 +1,19 @@
 //------------------ FUNCIONES QUE SE UTILIZAN (AJENAS A LA EXTENSION)------------------------------------------------------
-async function waitForElementsById(elementIds) {
-    return new Promise((resolve) => {
-      const observer = new MutationObserver(() => {
-          for (const elementId of elementIds) {
-            const targetElement = document.getElementById(elementId);
-            if (targetElement) {
-              observer.disconnect();
-              resolve();
-            }
+async function waitForElementsByIdorClassName(elements) {
+  return new Promise(async (resolve, reject) => {
+    const observer = new MutationObserver(() => {
+        for (const element of elements) {
+          const targetElement = document.getElementById(element) ?? document.getElementsByClassName(element)[0];
+          if (targetElement != undefined) {
+            observer.disconnect();
+            elementDetected = true;
+            resolve();
           }
-      });
-  
-      observer.observe(document, { childList: true, subtree: true });
+        }
     });
-  }
+    observer.observe(document, { childList: true, subtree: true });
+  });
+}
 
 
 //-------------- FUNCIONES DE LA EXTENSIÓN Y RELACIONADAS CON SU COMPORTAMIENTO ---------------------------------------------------------------
@@ -41,7 +41,7 @@ function getHandlerData(){
 }
 
 async function runAplication(){
-  waitForElementsById(handlersRootNames)
+  waitForElementsByIdorClassName(handlersRootNames)
   .then(async () => {
     browser.storage.local.get("accepted").then(async (data) => {
       preferences = data.accepted;

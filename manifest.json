@@ -22,6 +22,8 @@
         "./Handlers/handler.js",
         "./Handlers/didomi.js",
         "./Handlers/oneTrust.js",
+        "./Handlers/cookieYes.js",
+        "./Handlers/cookieNotice.js",
         "setUp.js",
         "content-script.js"
       ]

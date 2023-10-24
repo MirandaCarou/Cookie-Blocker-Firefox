@@ -1,40 +1,56 @@
 body {
-    min-width: 200px;
-    max-width: 300px;
-    padding: 10px;
-    margin: 0;
-    font-family: sans-serif;
-  }
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
 
-  button {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: block;
-    width: 100%;
-    padding: 8px 16px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
+div {
+  width: 250px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
 
-  button:disabled {
-    background-color: #ddd;
-    color: #999;
-    cursor: default;
-  }
-  h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 10px;
-    text-align: center;
-  }
+h1 {
+  font-size: 24px;
+  color: #333;
+  margin: 0 0 20px;
+}
 
-  hr {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 0;
-    border-top: 1px solid #ccc;
-  }
+span {
+  font-size: 16px;
+  color: #666;
+  display: block;
+  margin: 10px 0;
+}
+
+div > div {
+  text-align: center;
+  width: 70%;
+}
+
+div > div > label {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+div > div > label > input[type="radio"] {
+  margin: 0 5px;
+  vertical-align: middle;
+  position: relative;
+  top: 1px;
+}
+
+#accept:checked + label,
+#reject:checked + label {
+  font-weight: bold;
+  color: #0077cc;
+}
