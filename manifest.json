@@ -1,38 +1,48 @@
 {
-  "name": "Cookie cracker",
-  "version": "1.0",
-  "manifest_version": 3,
+  "name": "Cookie Controller",
+  "version": "1.1",
+  "manifest_version": 2,
   "description": "Bloquea cookies no esenciales",
   "icons": {
-    "128": "/icons/cookie.png"
+    "128": "./icons/cookie128.png"
   },
   "permissions": [
     "cookies",
-    "scripting",
     "activeTab",
     "storage",
     "tabs"
   ],
-  "host_permissions": [
-    "https://*/*",
-    "http://*/*"
-  ],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["./js/background.js"]
   },
   "content_scripts": [
     {
-      "matches": ["https://*/*","http://*/*"],
-      "js": ["./Handlers/handler.js","./Handlers/didomi.js","./Handlers/oneTrust.js","setUp.js","content-script.js" ]
+      "matches": ["<all_urls>"],
+      "js": [
+        "./js/Handlers/handler.js",
+        "./js/Handlers/didomi.js",
+        "./js/Handlers/oneTrust.js",
+        "./js/Handlers/cookieYes.js",
+        "./js/Handlers/cookieNotice.js",
+        "./js/Handlers/complianz.js",
+        "./js/Handlers/osano.js",
+        "./js/setUp.js",
+        "./js/content-script.js"
+      ]
     }
   ],
-  "action": {
-    "default_popup": "popup.html",
+  "browser_action": {
+    "default_popup": "./html/popup.html",
     "default_icon": {
-      "16": "/icons/cookie.png",
-      "32": "/icons/cookie.png",
-      "48": "/icons/cookie.png",
-      "128": "/icons/cookie.png"
+      "16": "./icons/cookie16.png",
+      "32": "./icons/cookie32.png",
+      "48": "./icons/cookie48.png",
+      "128": "./icons/cookie128.png"
+    }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "mclainho19@esei.uvigo.es"
     }
   }
 }
