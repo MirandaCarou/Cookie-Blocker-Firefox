@@ -32,7 +32,10 @@ https://github.com/MirandaCarou/Cookie-Blocker-Extension/assets/71145273/edbdad4
 
 ## Screenshots
 
-<img src="./icons/CapturaExrensionChrome.png" width="400" height=400> <img src="./icons/CapturaExtension2.png" width="400" height=400>
+![CapturaExrensionChrome](https://github.com/MirandaCarou/Cookie-Blocker-Firefox/assets/71145273/7202b5c0-7e3b-4806-a695-6b1f018bcd36)
+![CapturaExtension2](https://github.com/MirandaCarou/Cookie-Blocker-Firefox/assets/71145273/88711753-4c8a-420c-ac85-8fcb0bcd7fbe)
+
+
 
 ## Deployment 👷‍♀
 
