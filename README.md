@@ -34,7 +34,15 @@ https://github.com/MirandaCarou/Cookie-Blocker-Extension/assets/71145273/edbdad4
 
 <img src="./icons/CapturaExrensionChrome.png" width="400" height=400> <img src="./icons/CapturaExtension2.png" width="400" height=400>
 
-## Deployment
+## Deployment 👷‍♀
+
+No prerequisites other than a text editor and **Firefox** are required. 
+
+Once you have copied the repository locally (in case you just want to test it you just have to access this url -> <-) to test future changes you should: 
+
+  1. Open "about:debugging" in Firefox.
+  2. click "Load temporary add-on". 📦
+  3. elect any file in the extension directorys.
 
 
 ## Documentation
@@ -56,6 +64,60 @@ https://github.com/MirandaCarou/Cookie-Blocker-Extension/assets/71145273/edbdad4
 [Onetrust](https://www.onetrust.es/) 👽
 
 [Didomi](https://www.didomi.io/) 💀
+
+This project has the following folder structure: 🌳🌲
+
+```bash
+D:.
+|   .gitattributes
+|   CONTRIBUTING.md
+|   LICENSE.txt
+|   manifest.json
+|   README.md
+|   SECURITY.md
+|
++---css
+|       popup.css
+|
++---demos
++---html
+|       popup.html
+|
++---icons
+|       cookie.png
+|       cookie128.png
+|       cookie16.png
+|       cookie32.png
+|       cookie48.png
+|       españa.jpg
+|       formalLogo.png
+|       galicia.png
+|       inglesa.jpg
+|       language.png
+|
++---js
+|   |   background.js
+|   |   content-script.js
+|   |   popup.js
+|   |   setUp.js
+|   |
+|   \---Handlers
+|           complianz.js
+|           cookieNotice.js
+|           cookieYes.js
+|           didomi.js
+|           handler.js
+|           oneTrust.js
+|           osano.js
+|
++---languages
+|       en.json
+|       es.json
+|       gal.json
+|
+\---web-ext-artifacts
+        cookie_controller-1.1.zip
+```
 
 ## Contributing
 
