@@ -126,7 +126,7 @@ D:.
 
 Contributions are always welcome!
 
-See [contributing.md](https://github.com/MirandaCarou/Cookie-Blocker-Extension/blob/main/CONTRIBUTING.md) for ways to get started.
+See [contributing.md](https://github.com/MirandaCarou/Cookie-Blocker-Firefox/blob/main/CONTRIBUTING.md) for ways to get started.
 
 Please adhere to this project's code of conduct.
 
